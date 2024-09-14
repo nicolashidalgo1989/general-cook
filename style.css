@@ -1,17 +1,159 @@
+:root{
+    --primary: #ffa133;
+    --secondary: #474382;
+    --dark: #1c1c1c;
+    --black: #161616;
+}
+body{ 
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding-top: 5em;
+} 
+section:before{
+    content: "";
+    display: block;
+    height: 5rem;
+}
+.hero{
+    background-image: url(assets/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    min-height: 85vh; 
+    position: relative;
+}
+.hero h1{
+    text-shadow: 5px 2px 2px black;
+}
+.hero { 
+    position: relative;
+} 
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+.text-primary{
+    color: var(--primary)!important;
+}
+.text-secondary{
+    color: var(--secondary)!important;
+}
+.active::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    display: block;
+}
+
 .h2{
     text-align: center;
+    margin: 64px auto;
+    font-weight: 700;
 }
-.h2:before{
-    content: "";
-    background:url(assets/before-title.svg);
-    display: block;
-    width: 250px;    
-    margin: 0 auto;
-}
+.h2:before,
 .h2:after{
     content: "";
-    background: url(assets/after-title.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
     display: block;
-    width: 250px;    
+    height: 45px;
+    width: 120px;    
     margin: 0 auto;
 }
+.h2:before{
+    background-image: url(assets/before-title.svg);
+}
+.h2:after{ 
+    background-image: url(assets/after-title.svg);
+}
+
+.figure{
+    width: 540px;
+    height: 360px;
+}
+
+.figure-img{
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.card-img-top{
+    max-width: 50px;
+    margin: 2em auto;
+}
+
+.card-text{
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* productos */
+
+.producto{
+    cursor: pointer
+}
+.producto .card-img-overlay{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-end;
+    z-index: 1
+}
+
+.producto .card-img-overlay .card-title{ 
+    font-size:1.5em;
+}
+
+.producto .card-img-overlay .card-text{
+    color: white;
+    font-size:1em;
+}
+ 
+.producto:before{
+    content: "";
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: white;
+    background-image: url(assets/icon-cook.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    opacity: .8;
+    z-index: 1;
+}
+
+.producto:after{
+    content: "";
+    width: 100%;
+    height: 100%; 
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 100%);
+    top: 0;
+    left: 0;
+    opacity: .8;
+    position: absolute;
+    z-index: 0;
+}
+
+.footer{background-color: var(--dark);}
