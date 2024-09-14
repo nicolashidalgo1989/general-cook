@@ -1,0 +1,17 @@
+.h2{
+    text-align: center;
+}
+.h2:before{
+    content: "";
+    background:url(assets/before-title.svg);
+    display: block;
+    width: 250px;    
+    margin: 0 auto;
+}
+.h2:after{
+    content: "";
+    background: url(assets/after-title.svg);
+    display: block;
+    width: 250px;    
+    margin: 0 auto;
+}
