@@ -53,6 +53,25 @@ section:before{
 .hero { 
     position: relative;
 } 
+.custom-shape-divider-bottom-1726635680 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1726635680 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1726635680 .shape-fill {
+    fill: #FFFFFF;
+}
 .poppins-regular {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
