@@ -1,4 +1,5 @@
-:root{
+:root {
+    --animate-delay: 0.2s;
     --primary: #ffa133;
     --secondary: #474382;
     --dark: #1c1c1c;
@@ -138,13 +139,16 @@ section:before{
 /* productos */
 
 .producto{
-    cursor: pointer
+    cursor: pointer;
+    overflow: hidden;
 }
 .producto .card-img-overlay{
     display: flex;
     flex-direction: column; 
     justify-content: flex-end;
-    z-index: 1
+    z-index: 1;
+    margin-bottom: 0;
+    transition: all .3s ease-in-out;
 }
 
 .producto .card-img-overlay .card-title{ 
@@ -157,6 +161,27 @@ section:before{
     font-size: 1.5em;
     font-weight: normal;
     width: 90%;
+}
+
+.producto:hover .card-img-overlay {
+    margin-bottom: 5%
+}
+
+.producto:hover:after{ 
+    background: linear-gradient(0deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+    opacity: .85;
+}
+
+.producto:hover:before{  
+    opacity: 1;
+}
+
+.producto .card-img{ 
+    transition: all .3s ease-in-out;
+}
+
+.producto:hover .card-img{
+    transform: scale(1.1);
 }
  
 .producto:before{
@@ -174,6 +199,7 @@ section:before{
     left: 1em;
     opacity: .8;
     z-index: 1;
+    transition: all .3s ease-in-out;
 }
 
 .producto:after{
@@ -187,6 +213,7 @@ section:before{
     opacity: .8;
     position: absolute;
     z-index: 0;
+    transition: all .3s ease-in-out;
 }
 
 .iframe-container{
