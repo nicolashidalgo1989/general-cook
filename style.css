@@ -4,6 +4,7 @@
     --secondary: #474382;
     --dark: #1c1c1c;
     --black: #161616;
+    --soft: #FFECD6;
 }
 
 body {
@@ -44,6 +45,7 @@ section:before {
     padding-top: 5rem;
     padding-bottom: 3rem;
     position: relative;
+    overflow: hidden;
 }
 
 @media(min-width: 720px) {
@@ -52,14 +54,38 @@ section:before {
         padding-top: 0;
         padding-bottom: 0;
         background-position: center;
+        animation: 5s shadow linear;
     }
 }
 
 .hero h1 {
-    text-shadow: 5px 2px 2px black;
+    text-shadow: 
+        190px 0px 50px rgba(0, 0, 0, .02),
+        120px 0px 45px rgba(0, 0, 0, .14),
+        66px 0px 40px rgba(0, 0, 0, .45),
+        30px 0px 30px rgba(0, 0, 0, .8),
+        7px 0px 16px rgba(0, 0, 0, .9);
 } 
 
-  
+@keyframes shadow{
+    from{
+        text-shadow: 
+            0px 0px 0px rgba(0, 0, 0, .02),
+            0px 0px 0px rgba(0, 0, 0, .14),
+            0px 0px 0px rgba(0, 0, 0, .45),
+            0px 0px 0px rgba(0, 0, 0, .8),
+            0px 0px 0px rgba(0, 0, 0, .9);
+    }
+    to{
+        text-shadow: 
+            190px 0px 50px rgba(0, 0, 0, .02),
+            120px 0px 45px rgba(0, 0, 0, .14),
+            66px 0px 40px rgba(0, 0, 0, .45),
+            30px 0px 30px rgba(0, 0, 0, .8),
+            7px 0px 16px rgba(0, 0, 0, .9);
+    }
+}
+
 .hero::before{
     content: '';
     width: 50%;
@@ -74,13 +100,15 @@ section:before {
 
 .hero::after {
     content: '';
-    border-top-left-radius: 50% 100%;
-    border-top-right-radius: 50% 100%;
+    border-radius: 100%;
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom: -6%;
+    margin: 0 auto;
+    left: -2%;
+    right: 0;
+    width: 104%;
     background: #fff;
-    height: 5%;
+    height: 15%; 
 }
 
 .poppins-regular {
@@ -109,6 +137,22 @@ section:before {
     color: var(--secondary) !important;
 }
 
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-soft {
+    background-color: var(--soft) !important;
+}
+
+.btn{
+    border-radius: 7px;
+    font-weight: bolder;
+}
+
+.btn-lg{
+    padding: 1rem 2rem;
+}
 .nav-link.active::after {
     content: "";
     width: 100%;
@@ -123,6 +167,9 @@ section:before {
     margin: 64px auto;
     font-weight: 700;
     font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media(min-width: 720px) {
@@ -131,25 +178,16 @@ section:before {
     }
 }
 
-.h2:before,
-.h2:after {
+.h2:before {
     content: "";
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     background-color: transparent;
-    display: block;
-    height: 45px;
-    width: 120px;
-    margin: 0 auto;
-}
-
-.h2:before {
-    background-image: url(assets/before-title.svg);
-}
-
-.h2:after {
-    background-image: url(assets/after-title.svg);
+    background-image: url(assets/isologo.svg); 
+    height: 100px;
+    width: 100px;
+    margin: 0 30px 0 0;
 }
 
 .figure {
@@ -177,6 +215,11 @@ section:before {
 .producto {
     cursor: pointer;
     overflow: hidden;
+    background-image: url(assets/product-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
 }
 
 .producto .card-img-overlay {
@@ -201,7 +244,7 @@ section:before {
 }
 
 .producto:hover .card-img-overlay {
-    margin-bottom: 5%
+    margin-bottom: 1%
 }
 
 .producto:hover:after {
@@ -242,10 +285,10 @@ section:before {
 .producto:after {
     content: "";
     width: 100%;
-    height: 100%;
+    height: 50%;
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 100%);
-    top: 0;
+    bottom: 0;
     left: 0;
     opacity: .8;
     position: absolute;
@@ -271,6 +314,48 @@ section:before {
 .carousel-control-prev,
 .carousel-control-next {
     transform: scale(2);
+}
+
+.certificaciones{
+    background-image: url(assets/certificate-bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+}
+
+.mt-n5{
+    margin-top: -5rem;
+}
+
+.blockquote{
+    position: relative;
+}
+
+.blockquote:before,
+.blockquote:after{
+    content: "";
+    background-image: url(assets/quote.svg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+}
+
+.blockquote:before{
+    top: 0;
+    left: 0;
+    margin-bottom: 50px;
+}
+
+.blockquote:after{
+    transform: rotate(180deg); 
+    right: 7%;
+}
+.blockquote p{
+    margin: 20px auto;
 }
 
 .footer {
