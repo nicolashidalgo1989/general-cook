@@ -5,6 +5,7 @@
     --dark: #1c1c1c;
     --black: #161616;
     --soft: #FFECD6;
+    --bs-navbar-toggler-border-color: #ffa133;
 }
 
 body {
@@ -29,6 +30,14 @@ section:before {
 .nav-link:hover {
     padding-left: 2rem;
     color: black;
+}
+
+.navbar-toggler{
+    border-color: var(--primary);
+}
+
+.navbar-toggler:focus{
+    box-shadow: var(--primary)
 }
 
 .bg-body-tertiary {
@@ -332,6 +341,10 @@ section:before {
         0 42px 50px rgba(0, 0, 0, .28),
         0 18px 37px rgba(0, 0, 0, .47),
         0 5px 20px rgba(0, 0, 0, .54);
+}
+
+.carousel{
+    overflow: hidden;
 }
 
 .carousel-control-prev,
