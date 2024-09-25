@@ -27,7 +27,7 @@ section:before {
 
 .navbar-expand-lg .navbar-nav .nav-link,
 .nav-link:hover {
-    padding-left: 1.2rem;
+    padding-left: 2rem;
     color: black;
 }
 
@@ -168,13 +168,15 @@ section:before {
     font-weight: 700;
     font-size: 2rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 @media(min-width: 720px) {
     .h2 {
         font-size: 2.5rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
     }
 }
 
@@ -187,7 +189,13 @@ section:before {
     background-image: url(assets/isologo.svg); 
     height: 100px;
     width: 100px;
-    margin: 0 30px 0 0;
+    margin: 0 auto;
+}
+
+@media(min-width: 720px) {
+    .h2:before {
+        margin: 0 30px 0 0;
+    }
 }
 
 .figure {
@@ -197,7 +205,7 @@ section:before {
 .figure-img {
     height: 100%;
     object-fit: cover;
-    transform: scale(1.4);
+    /* transform: scale(1.4); */
 }
 
 .card-img-top {
@@ -219,8 +227,14 @@ section:before {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    height: 40vh;
 }
+
+@media(min-width: 720px) and (max-width: 960px) {
+    .producto {
+        height: 50vh;
+    }
+} 
 
 .producto .card-img-overlay {
     display: flex;
@@ -307,8 +321,17 @@ section:before {
 
 @media(min-width: 720px) {
     .iframe-container {
-        min-height: 780px;
+        min-height: 880px;
     }
+}
+
+.video{
+    box-shadow: 
+        0 115px 64px rgba(0, 0, 0, .01),
+        0 75px 59px rgba(0, 0, 0, .08),
+        0 42px 50px rgba(0, 0, 0, .28),
+        0 18px 37px rgba(0, 0, 0, .47),
+        0 5px 20px rgba(0, 0, 0, .54);
 }
 
 .carousel-control-prev,
@@ -352,8 +375,10 @@ section:before {
 
 .blockquote:after{
     transform: rotate(180deg); 
-    right: 7%;
+    right: 9%;
+    bottom: 12%;
 }
+
 .blockquote p{
     margin: 20px auto;
 }
